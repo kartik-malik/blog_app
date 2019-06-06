@@ -68,7 +68,7 @@ Blog.findById(req.params.id,function(err,foundBlog){
 app.get("/blogs/:id/edit",function(req,res){
     Blog.findById(req.params.id,function(err,foundBlog){
         if(err){
-            res.redirect("/blogs");
+            console.log(err);
         }
         else{
             res.render("edit",{blog:foundBlog});
